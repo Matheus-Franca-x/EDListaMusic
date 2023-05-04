@@ -60,10 +60,13 @@ public class PlayerController
 	
 	public void executaPlaylist(ListaString lista)
 	{
-		try {	
-			System.out.println(lista.get(1));
-		} catch (Exception e) {
-			e.printStackTrace();
+		for(int i = 0; i < lista.size(); i++)
+		{
+			try {	
+				System.out.println(lista.get(i));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}			
 		}
 	}
 }
