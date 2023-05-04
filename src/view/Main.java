@@ -27,6 +27,7 @@ public class Main {
 		controll.adicionaMusica(lista, "Sick of U;BoyWithUke;2:49");
 		controll.adicionaMusica(lista, "Urdestand;BoyWithUke;2:52");
 		controll.adicionaMusica(lista, "Long Drive;BoyWithUke;2:40");
+		controll.adicionaMusica(lista, "Stressed Out;Twenty One Pilots;3:23");
 		
 		
 		
