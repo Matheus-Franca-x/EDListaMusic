@@ -1,17 +1,18 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import controller.PlayerController;
 import matheus.ListaString.ListaString;
-import model.Musica;
 
 public class Main {
 
 	public static void main(String[] args) 
 	{
 		ListaString lista = new ListaString();
+		int op = -1;
 		
 		PlayerController controll = new PlayerController();
-		
 		
 		//Apenas musica de Cultura
 		controll.adicionaMusica(lista, "Cold Cold Cold;Cage The Elephant;3:35");
@@ -29,13 +30,44 @@ public class Main {
 		controll.adicionaMusica(lista, "Long Drive;BoyWithUke;2:40");
 		controll.adicionaMusica(lista, "Stressed Out;Twenty One Pilots;3:23");
 		
+		while (op != 9)
+		{
+			op = Integer.parseInt(JOptionPane.showInputDialog("Opcoes da playlist: \n" + 
+															  "1 - Add musica.\n" +
+															  "2 - Remove musica.\n" +
+															  "3 - Mostra playlist.\n" +
+															  "9 - Saida!"));
+			switch (op)
+			{
+				case 1:
+					String musica = JOptionPane.showInputDialog("Digite o nome da musica: ") + ";" +
+									JOptionPane.showInputDialog("Digite o nome do artista: ") + ";" +
+									JOptionPane.showInputDialog("Digite o tempo da musica: \nExemplo: 1:24");
+					controll.adicionaMusica(lista, musica);
+					break;
+				case 2:
+				try {
+					controll.executaPlaylist(lista);
+					int musicRemove = Integer.parseInt(JOptionPane.showInputDialog("Digite a posicao da musica para excluir: "));
+					controll.removeMusica(lista, musicRemove);
+					System.out.println("\n");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+					break;
+				case 3:
+					controll.executaPlaylist(lista);
+					break;
+				case 9:
+					
+					break;
+				default:
+						JOptionPane.showMessageDialog(null, "Opcao invalida!");
+			
+			}
+			
+		}
 		
-		
-//		try {
-//			controll.removeMusica(lista, 0);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 		
 		controll.executaPlaylist(lista);
 		
