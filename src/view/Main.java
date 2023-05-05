@@ -59,17 +59,12 @@ public class Main {
 					controll.executaPlaylist(lista);
 					break;
 				case 9:
-					
+					JOptionPane.showMessageDialog(null, "Obrigado por utilizar nosso sistema!");
 					break;
 				default:
 						JOptionPane.showMessageDialog(null, "Opcao invalida!");
-			
-			}
-			
+			}	
 		}
-		
-		
-		controll.executaPlaylist(lista);
 		
 	}
 
